@@ -1,5 +1,5 @@
 let pipes = {
-  hole: Math.random() * (height - 100),
+  hole: Math.random() * (height - 150),
   posX: 2 * width,
   velX: 4,
 
@@ -7,7 +7,7 @@ let pipes = {
     push(); //pipe
     noStroke();
     fill(50, 150, 50);
-    rect(this.posX - 25, 0, 50, height);
+    rect(this.posX - 25, 0, 50, height - 50);
     pop();
 
     push(); //hole
