@@ -2,7 +2,7 @@ let bird = {
   r: 15,
   posX: width / 3,
   posY: height / 2,
-  velY: 0.6,
+  velY: 0,
   accY: 0.3,
 
   show() {
@@ -16,21 +16,15 @@ let bird = {
     if (this. posY + this.r < height) {
       this.velY = -5;
     } else {
-      return false
+      return false;
     }
 
   },
 
   stop() {
-    //console.log("GAME OVER");
-    if (this.posX + this.r > pipes.posX &&
-      this.posY + this.r < pipes.hole + 100) {
-        this.velY = 10;
-        this.posY += this.velY;
-    } else {
-      return false;
-    }
-
-
+    console.log("GAME OVER");
+    document.getElementById("go").style.color = "red";
   }
+
+
 }

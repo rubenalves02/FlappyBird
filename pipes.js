@@ -1,7 +1,9 @@
-let pipes = {
-  hole: Math.random() * (height - 150),
-  posX: 2 * width,
-  velX: 4,
+class Pipe {
+  constructor() {
+    this.hole = 50 + Math.random() * (height - 250);
+    this.posX = 1.5 * width;
+    this.velX = 3;
+  }
 
   show() {
     push(); //pipe
@@ -16,9 +18,11 @@ let pipes = {
     rect(this.posX - 25, this.hole, 50, 100);
     pop();
     this.posX -= this.velX;
-  },
+  }
 
   stop() {
     this.velX = 0;
   }
+
+  
 }
