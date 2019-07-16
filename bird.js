@@ -22,8 +22,9 @@ let bird = {
   },
 
   stop() {
+    this.velY = 0;
+    this.accY = 0;
     console.log("GAME OVER");
-    document.getElementById("go").style.color = "red";
   }
 
 

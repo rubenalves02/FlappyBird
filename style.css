@@ -7,14 +7,3 @@ h4 {
   font-family: Arial;
   font-size: 38px;
 }
-
-h2 {
-  color: #333;
-  font-family: Arial;
-  font-size: 58px;
-  position: fixed;
-  left: 50%;
-  bottom: 0px;
-  transform: translate(-50%, -50%);
-  margin: 0;
-}
