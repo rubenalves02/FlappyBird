@@ -24,12 +24,8 @@ function keyPressed() { //carregar no espaço depois de perder para recomeçar?!
   }
 }
 
-function touchStarted() { //carregar no espaço depois de perder para recomeçar?!
-  if (value === 1) {
-    bird.up();
-  } else {
-    return false;
-  }
+function mousePressed() {
+  bird.up();
 }
 
 function draw() {
