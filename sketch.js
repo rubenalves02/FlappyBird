@@ -3,6 +3,7 @@ let pipes = [];
 let index = 0;
 let hitTop = false, hitBottom = false, hitFloor = false, hit = false;
 
+
 function setup() {
   frameRate(60);
 
@@ -12,6 +13,23 @@ function setup() {
   var y = (windowHeight - height) / 2;
 
   cnv.position(x, y);
+}
+
+
+function keyPressed() { //carregar no espaço depois de perder para recomeçar?!
+  if (keyCode === 32) {
+    bird.up();
+  } else {
+    return false;
+  }
+}
+
+function touchStarted() { //carregar no espaço depois de perder para recomeçar?!
+  if (value === 1) {
+    bird.up();
+  } else {
+    return false;
+  }
 }
 
 function draw() {
@@ -26,14 +44,12 @@ function draw() {
     pipes.push(new Pipe());
   }
 
-
   for (let p of pipes) {
-
-    p.show();
-
     if (bird.posX == p.posX) {
       index++;
     }
+
+    p.show();
 
     push();
     textAlign(CENTER, TOP);
@@ -82,27 +98,13 @@ function draw() {
       pop();
       noLoop();
     }
-
   }
+
 
   bird.show();
 
 
   if (height - 50 - bird.posY - bird.r < 0) {
     bird.posY = height - 45 - bird.r;
-  }
-}
-
-
-function keyPressed() { //carregar no espaço depois de perder para recomeçar?!
-  if (keyCode === 32) {
-    if (hit) {
-      let hit = false;
-      redraw();
-    } else {
-    bird.up();
-    }
-  } else {
-    return false;
   }
 }
